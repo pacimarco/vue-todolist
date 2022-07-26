@@ -14,7 +14,9 @@
         <input type="text" v-model="newToDo" @keyup.enter="addToDo" />
         <button @click="addToDo">Aggiungi alla lista</button>
         <ul>
-            <li v-for="(todo,indice) in toDos">{{todo}} <span @click="changeClass" v-bind:class="striked"><i class="fa-solid fa-circle-check"></i></span> <span @click="eliminaToDo(indice)"> <i class="fa-solid fa-trash"></i></span></li>
+            <li v-for="(todo,indice) in toDos">
+                <span v-bind:class="todo.done?'striker':''">{{todo.text}}</span>
+                <span @click="eliminaToDo(indice)"> <i class="fa-solid fa-trash"></i></span></li>
         </ul>
     </div>
 

@@ -5,10 +5,18 @@ var app = new Vue(
         data: {
             newToDo: '',
             toDos: [
-                'andare al lago',
-                'prendere la moto',
-                'andare al cinema',
-                'andare al parco',
+                {
+                    text: 'andare a pesca',
+                    'done': true,
+                },
+                {
+                    text: 'prendere moto',
+                    'done': false,
+                },
+                {
+                    text: 'prendere biglietto treno',
+                    'done': false,
+                },
 
             ]
         },
@@ -18,18 +26,17 @@ var app = new Vue(
             },
 
             addToDo(){
-                this.toDos.push(this.newToDo);
+
+                const todo = {
+                    text: this.newToDo,
+                    'done': false,
+                };
+
+                this.toDos.push(todo);
                 this.newToDo = '';
             },
 
-            changeClass(){
-                if (this.myClass == 'striked') {
-                    this.myClass = 'unstriked';
-                }
-                else {
-                    this.myClass = 'striked';
-                }
-            }
+            
 
 
         }
