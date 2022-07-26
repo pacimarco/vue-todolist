@@ -1,4 +1,10 @@
 .striker{
     text-decoration: line-through;
-
+    color: blueviolet;
 }
+
+.btn{
+    color: black;
+    background-color: aqua;
+}
+
